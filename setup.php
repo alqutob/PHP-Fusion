@@ -1319,7 +1319,7 @@ if (isset($_POST['step']) && $_POST['step'] == "6") {
 //		$db_connect = @mysql_connect($db_host, $db_user, $db_pass);
 //		$db_select = @mysql_select_db($db_name);
 		$link = dbconnect($db_host, $db_user, $db_pass, $db_name, $db_port="3306");
-//		unset($db_host, $db_user, $db_pass, $db_		
+//		unset($db_host, $db_user, $db_pass, $db_
 	}
 	$error = "";
 	$error_pass = "0";
@@ -1727,15 +1727,15 @@ if (!file_exists(".htaccess")) {
 }
 
 //  Wipe out all .htaccess rewrite rules and add error handler only
-$htc = "ErrorDocument 400 ".$settings['siteurl']."error.php?code=400\r\n";
-$htc .= "ErrorDocument 401 ".$settings['siteurl']."error.php?code=401\r\n";
-$htc .= "ErrorDocument 403 ".$settings['siteurl']."error.php?code=403\r\n";
-$htc .= "ErrorDocument 404 ".$settings['siteurl']."error.php?code=404\r\n";
-$htc .= "ErrorDocument 500 ".$settings['siteurl']."error.php?code=500\r\n";
+$htc = "ErrorDocument 400 ".$settings['site_path']."error.php?code=400\r\n";
+$htc .= "ErrorDocument 401 ".$settings['site_path']."error.php?code=401\r\n";
+$htc .= "ErrorDocument 403 ".$settings['site_path']."error.php?code=403\r\n";
+$htc .= "ErrorDocument 404 ".$settings['site_path']."error.php?code=404\r\n";
+$htc .= "ErrorDocument 500 ".$settings['site_path']."error.php?code=500\r\n";
 $temp = fopen(".htaccess", "w");
 if (fwrite($temp, $htc)) {
 	fclose($temp);
-}						
+}
 		}
 		if (isset($_POST['localeset']) && file_exists("locale/".$_POST['localeset']) && is_dir("locale/".$_POST['localeset'])) {
 			include "locale/".$_POST['localeset']."/setup.php";
