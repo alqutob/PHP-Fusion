@@ -4,7 +4,7 @@
 | Copyright (C) PHP-Fusion Inc
 | https://www.php-fusion.co.uk/
 +--------------------------------------------------------+
-| Filename: settings_banners.php
+| Filename: banners.php
 | Author: Nick Jones (Digitanium)
 +--------------------------------------------------------+
 | This program is released as free software under the
@@ -17,56 +17,56 @@
 +--------------------------------------------------------*/
 require_once "../maincore.php";
 if (!checkrights("SB") || !defined("iAUTH") || !isset($_GET['aid']) || $_GET['aid'] != iAUTH) {
-	redirect("../index.php");
+    redirect("../index.php");
 }
 require_once THEMES."templates/admin_header.php";
 require_once INCLUDES."html_buttons_include.php";
 include LOCALE.LOCALESET."admin/settings.php";
 if (isset($_GET['error']) && isnum($_GET['error']) && !isset($message)) {
-	if ($_GET['error'] == 0) {
-		$message = $locale['900'];
-	} elseif ($_GET['error'] == 1) {
-		$message = $locale['901'];
-	}
-	if (isset($message)) {
-		echo "<div id='close-message'><div class='admin-message alert alert-info m-t-10'>".$message."</div></div>\n";
-	}
+    if ($_GET['error'] == 0) {
+        $message = $locale['900'];
+    } else if ($_GET['error'] == 1) {
+        $message = $locale['901'];
+    }
+    if (isset($message)) {
+        echo "<div id='close-message'><div class='admin-message alert alert-info m-t-10'>".$message."</div></div>\n";
+    }
 }
 if (isset($_POST['save_banners'])) {
-	$error = 0;
-	if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
-		$result = dbquery("UPDATE ".DB_SETTINGS." SET settings_value='".addslash($_POST['sitebanner1'])."' WHERE settings_name='sitebanner1'");
-		if (!$result) {
-			$error = 1;
-		}
-		$result = dbquery("UPDATE ".DB_SETTINGS." SET settings_value='".addslash($_POST['sitebanner2'])."' WHERE settings_name='sitebanner2'");
-		if (!$result) {
-			$error = 1;
-		}
-		set_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "");
-		redirect(FUSION_SELF.$aidlink."&error=".$error, TRUE);
-	} else {
-		$defender->stop();
-		$defender->addNotice($locale['global_182']);
-	}
+    $error = 0;
+    if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
+        $result = dbquery("UPDATE ".DB_SETTINGS." SET settings_value='".addslash($_POST['sitebanner1'])."' WHERE settings_name='sitebanner1'");
+        if (!$result) {
+            $error = 1;
+        }
+        $result = dbquery("UPDATE ".DB_SETTINGS." SET settings_value='".addslash($_POST['sitebanner2'])."' WHERE settings_name='sitebanner2'");
+        if (!$result) {
+            $error = 1;
+        }
+        set_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "");
+        redirect(FUSION_SELF.$aidlink."&error=".$error, TRUE);
+    } else {
+        $defender->stop();
+        $defender->addNotice($locale['global_182']);
+    }
 }
 if (isset($_POST['preview_banners'])) {
-	$sitebanner1 = "";
-	$sitebanner2 = "";
-	if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
-		$sitebanner1 = stripslash($_POST['sitebanner1']);
-		$sitebanner2 = stripslash($_POST['sitebanner2']);
-		set_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "");
-	} else {
-		$defender->stop();
-		$defender->addNotice($locale['global_182']);
-	}
+    $sitebanner1 = "";
+    $sitebanner2 = "";
+    if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
+        $sitebanner1 = stripslash($_POST['sitebanner1']);
+        $sitebanner2 = stripslash($_POST['sitebanner2']);
+        set_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "");
+    } else {
+        $defender->stop();
+        $defender->addNotice($locale['global_182']);
+    }
 } else {
-	$sitebanner1 = stripslashes($settings['sitebanner1']);
-	$sitebanner2 = stripslashes($settings['sitebanner2']);
+    $sitebanner1 = stripslashes($settings['sitebanner1']);
+    $sitebanner2 = stripslashes($settings['sitebanner2']);
 }
 opentable($locale['850']);
-echo openform('settingsform', 'settingsform', 'post', FUSION_SELF.$aidlink, array('downtime' => 0));
+echo openform('settingsform', 'settingsform', 'post', FUSION_SELF.$aidlink, ['downtime' => 0]);
 echo "<table cellpadding='0' cellspacing='0' class='table table-responsive center'>\n<tbody><tr>\n";
 echo "<td class='tbl'>\n";
 echo form_textarea($locale['851'], 'sitebanner1', 'sitebanner1', $sitebanner1);
@@ -78,10 +78,10 @@ echo "<input type='button' value='<?php?>' class='button' style='width:60px;' on
 echo display_html("settingsform", "sitebanner1", TRUE)."</td>\n";
 echo "</tr>\n<tr>\n";
 if (isset($_POST['preview_banners']) && $sitebanner1) {
-	if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
-		eval("?><td class='tbl'>".$sitebanner1."</td><?php ");
-		echo "</tr>\n<tr>\n";
-	}
+    if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
+        eval("?><td class='tbl'>".$sitebanner1."</td><?php ");
+        echo "</tr>\n<tr>\n";
+    }
 }
 echo "<td class='tbl'>\n";
 echo form_textarea($locale['852'], 'sitebanner2', 'sitebanner2', $sitebanner2);
@@ -93,25 +93,24 @@ echo "<input type='button' value='<?php?>' class='button' style='width:60px;' on
 echo display_html("settingsform", "sitebanner2", TRUE)."</td>\n";
 echo "</tr>\n<tr>\n";
 if (isset($_POST['preview_banners']) && $sitebanner2) {
-	if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
-		eval("?><td class='tbl'>".$sitebanner2."</td><?php ");
-		echo "</tr>\n<tr>\n";
-	}
+    if (check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
+        eval("?><td class='tbl'>".$sitebanner2."</td><?php ");
+        echo "</tr>\n<tr>\n";
+    }
 }
 if (!check_admin_pass(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")) {
-	echo "<td class='tbl'>\n";
-	echo form_text($locale['853'], 'admin_password', 'admin_password', (isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : ""), array('password' => 1,
-																																							'inline' => 1,
-																																							'width' => '250px'));
-	//".$locale['853']." <input type='password' name='admin_password' value='".(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")."' class='textbox' style='width:150px;' autocomplete='off' /></td>\n";
-	echo "</td>\n</tr>\n<tr>\n";
+    echo "<td class='tbl'>\n";
+    echo form_text($locale['853'], 'admin_password', 'admin_password', (isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : ""), ['password' => 1,
+                                                                                                                                                       'inline'   => 1,
+                                                                                                                                                       'width'    => '250px']);
+    //".$locale['853']." <input type='password' name='admin_password' value='".(isset($_POST['admin_password']) ? stripinput($_POST['admin_password']) : "")."' class='textbox' style='width:150px;' autocomplete='off' /></td>\n";
+    echo "</td>\n</tr>\n<tr>\n";
 }
 echo "<td align='center' class='tbl'><br />";
-echo form_button($locale['855'], 'preview_banners', 'preview_banners', $locale['855'], array('class' => 'btn-primary m-r-10'));
-echo form_button($locale['854'], 'save_banners', 'save_banners', $locale['854'], array('class' => 'btn-primary m-r-10'));
+echo form_button($locale['855'], 'preview_banners', 'preview_banners', $locale['855'], ['class' => 'btn-primary m-r-10']);
+echo form_button($locale['854'], 'save_banners', 'save_banners', $locale['854'], ['class' => 'btn-primary m-r-10']);
 //echo "<input type='submit' name='save_banners' value='".$locale['854']."' class='button' />\n";
 //echo "<input type='submit' name='preview_banners' value='".$locale['855']."' class='button' /></td>\n";
 echo "</td>\n</tr>\n</table>\n</form>\n";
 closetable();
 require_once THEMES."templates/footer.php";
-?>

@@ -16,8 +16,8 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
-$__BBCODE__[] = array("description" => $locale["bb_tlen_description"], "value" => "tlen", "bbcode_start" => "[tlen]",
-					  "bbcode_end" => "[/tlen]", "usage" => "[tlen]".$locale["bb_tlen_usage"]."[/tlen]");
+$__BBCODE__[] = ["description" => $locale["bb_tlen_description"], "value" => "tlen", "bbcode_start" => "[tlen]",
+                 "bbcode_end"  => "[/tlen]", "usage" => "[tlen]".$locale["bb_tlen_usage"]."[/tlen]"];
 ?>

@@ -25,8 +25,6 @@ if (!defined("IN_FUSION")) {
 
 if (FUSION_SELF !== "maintenance.php" && FUSION_SELF !== "go.php" && FUSION_SELF !== "404.php") {
 	add_to_head("<meta name='viewport' content='width=device-width, initial-scale=1'>
-			<link rel='stylesheet' href='".THEME."resp-grid.css'>
-			<link rel='stylesheet' href='".THEME."responsive.css'>
 			<!--[if lt IE 8]>
 			<div style=' clear: both; text-align:center; position: relative;'>
 			<a href='http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode'>

@@ -16,7 +16,7 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
 
 $text = preg_replace('#\[bcolor=(black|blue|brown|cyan|gray|green|lime|maroon|navy|olive|orange|purple|red|silver|violet|white|yellow)\](.*?)\[/bcolor\]#si', '<span style=\'background-color:\1;padding:2px\'>\2</span>', $text);

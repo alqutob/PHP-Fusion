@@ -26,9 +26,11 @@ $_errorHandler = array();
 // PHP-Fusion Error Handler
 function setError($error_level, $error_message, $error_file, $error_line, $error_context) {
 	global $pdo, $pdo_enabled, $userdata, $_errorHandler, $settings;
+	$error_file = stripinput($error_file);
+
 	$showError = TRUE;
 	$result = dbquery("SELECT error_id, error_status FROM ".DB_ERRORS."
-		WHERE error_level='".intval($error_level)."' AND error_file='".stripinput($error_file)."'
+		WHERE error_level='".intval($error_level)."' AND error_file='".$error_file."'
 		AND error_line='".intval($error_line)."' AND error_status!='1'
 		ORDER BY error_timestamp DESC LIMIT 1");
 	if (dbrows($result) == 0) {
@@ -37,7 +39,7 @@ function setError($error_level, $error_message, $error_file, $error_line, $error
 				error_user_level, error_user_ip, error_user_ip_type, error_status, error_timestamp
 			) VALUES (
 				'".intval($error_level)."', '".stripinput($error_message)."',
-				'".stripinput($error_file)."', '".intval($error_line)."',
+				'".$error_file."', '".intval($error_line)."',
 				'".TRUE_PHP_SELF."', '".$userdata['user_level']."', '".USER_IP."', '".USER_IP_TYPE."',
 				'0', '".time()."'
 			)");

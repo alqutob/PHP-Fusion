@@ -16,31 +16,31 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
 
-if (phpversion()>5) {
-	$text = preg_replace_callback(
-		"#\[mail\]([\r\n]*)([^\s\'\";:\+]*?)([\r\n]*)\[/mail\]#si",
-		function($m) {
-			require LOCALE.LOCALESET."bbcodes/mail.php";
-			$mail = $m['2'];
-			return hide_email($mail);
-		}, $text);
+if (phpversion() > 5) {
+    $text = preg_replace_callback(
+        "#\[mail\]([\r\n]*)([^\s\'\";:\+]*?)([\r\n]*)\[/mail\]#si",
+        function ($m) {
+            require LOCALE.LOCALESET."bbcodes/mail.php";
+            $mail = $m['2'];
+            return hide_email($mail);
+        }, $text);
 } else {
-	$text = preg_replace('#\[mail\]([\r\n]*)([^\s\'\";:\+]*?)([\r\n]*)\[/mail\]#sie', "hide_email('\\2').''", $text);
+    $text = preg_replace('#\[mail\]([\r\n]*)([^\s\'\";:\+]*?)([\r\n]*)\[/mail\]#sie', "hide_email('\\2').''", $text);
 }
 
-if (phpversion()>5) {
-	$text = preg_replace_callback(
-		"#\[mail=([\r\n]*)([^\s\'\";:\+]*?)\](.*?)([\r\n]*)\[/mail\]#si",
-		function($m) {
-			require LOCALE.LOCALESET."bbcodes/mail.php";
-			$mail = $m['2'];
-			return hide_email($mail);
-		}, $text);
+if (phpversion() > 5) {
+    $text = preg_replace_callback(
+        "#\[mail=([\r\n]*)([^\s\'\";:\+]*?)\](.*?)([\r\n]*)\[/mail\]#si",
+        function ($m) {
+            require LOCALE.LOCALESET."bbcodes/mail.php";
+            $mail = $m['2'];
+            return hide_email($mail);
+        }, $text);
 } else {
-	$text = preg_replace('#\[mail=([\r\n]*)([^\s\'\";:\+]*?)\](.*?)([\r\n]*)\[/mail\]#sie', "hide_email('\\2').''", $text);
+    $text = preg_replace('#\[mail=([\r\n]*)([^\s\'\";:\+]*?)\](.*?)([\r\n]*)\[/mail\]#sie', "hide_email('\\2').''", $text);
 }
 
 

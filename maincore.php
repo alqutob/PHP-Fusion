@@ -78,7 +78,7 @@ if ($pdo_enabled == "1") {
 }
 
 // Establish mySQL database connection
-$link = dbconnect($db_host, $db_user, $db_pass, $db_name);
+$link = dbconnect($db_host, $db_user, $db_pass, $db_name, $db_port="3306");
 unset($db_host, $db_user, $db_pass);
 
 // Fetch the settings from the database
@@ -318,7 +318,7 @@ function lang_switcher() {
 					if ($img_files[$i] == LANGUAGE) {
 						echo "<img class='display-block img-responsive' src='".LOCALE.$img_files[$i]."/".$img_files[$i].".png' alt='' title='".$lang_text."' style='min-width:20px;'>\n ";
 					} else {
-						echo "<a class='side pull-left display-block' style='max-width:25px;' href='".$this_link."".$img_files[$i]."'><img src='".LOCALE.$img_files[$i]."/".$img_files[$i].".png' alt='' title='".$lang_text."' style='min-width:20px;'></a>\n ";
+						echo "<a class='side pull-left display-block' style='max-width:32px;' href='".$this_link."".$img_files[$i]."'><img src='".LOCALE.$img_files[$i]."/".$img_files[$i].".png' alt='' title='".$lang_text."' style='min-width:20px;'></a>\n ";
 					}
 					echo "</div>\n";
 				}

@@ -16,9 +16,9 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
-$__BBCODE__[] = array("description" => $locale["bb_allegro_description"], "value" => "allegro",
-					  "bbcode_start" => "[allegro]", "bbcode_end" => "[/allegro]",
-					  "usage" => "[allegro]".$locale["bb_allegro_usage"]."[/allegro]");
+$__BBCODE__[] = ["description"  => $locale["bb_allegro_description"], "value" => "allegro",
+                 "bbcode_start" => "[allegro]", "bbcode_end" => "[/allegro]",
+                 "usage"        => "[allegro]".$locale["bb_allegro_usage"]."[/allegro]"];
 ?>

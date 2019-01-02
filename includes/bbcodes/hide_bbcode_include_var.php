@@ -16,13 +16,13 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
 if (iADMIN) {
-	$__BBCODE__[] = array("description" => $locale['bb_hide_description'], "value" => "hide",
-						  "bbcode_start" => "[hide]", "bbcode_end" => "[/hide]",
-						  "usage" => "[hide]".$locale['bb_hide_usage']."[/hide]");
+    $__BBCODE__[] = ["description"  => $locale['bb_hide_description'], "value" => "hide",
+                     "bbcode_start" => "[hide]", "bbcode_end" => "[/hide]",
+                     "usage"        => "[hide]".$locale['bb_hide_usage']."[/hide]"];
 } else {
-	$__BBCODE_NOT_QUOTABLE__[] = "hide";
+    $__BBCODE_NOT_QUOTABLE__[] = "hide";
 }
 ?>

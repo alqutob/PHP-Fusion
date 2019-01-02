@@ -45,7 +45,7 @@ function ColorMap(elname, formname) {
             html += "<td style='width:10px;height:10px;cursor:crosshair;background-color:" + colors[i] + "' onmousedown=\"addText('" + elname + "', '[color=" + colors[i] + "]', '[/color]', '" + formname + "');return false;\" onfocus=\"showMapColor('" + colors[i] + "', '" + elname + "');\" onmouseover=\"showMapColor('" + colors[i] + "', '" + elname + "');\">"
         }
         html += '</td>';
-        if ((i + 1) % 18 == 0)    html += '</tr><tr>';
+        if ((i + 1) % 18 == 0) html += '</tr><tr>';
     }
     html += '<tr><td colspan="18">'
         + '<table width="100%" border="0" cellspacing="0" cellpadding="0">'

@@ -16,9 +16,9 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
-$__BBCODE__[] = array("description" => $locale["bb_googlevideo_description"], "value" => "googlevideo",
-					  "bbcode_start" => "[googlevideo]", "bbcode_end" => "[/googlevideo]",
-					  "usage" => "[googlevideo]".$locale["bb_googlevideo_usage"]."[/googlevideo]");
+$__BBCODE__[] = ["description"  => $locale["bb_googlevideo_description"], "value" => "googlevideo",
+                 "bbcode_start" => "[googlevideo]", "bbcode_end" => "[/googlevideo]",
+                 "usage"        => "[googlevideo]".$locale["bb_googlevideo_usage"]."[/googlevideo]"];
 ?>

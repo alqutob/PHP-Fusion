@@ -1,4 +1,9 @@
-
+.idea
+*.xml
+*.iml
+*.db
+.DS_Store
+*.config
+.htaccess
 config.php
-
-includes/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
+_config.php

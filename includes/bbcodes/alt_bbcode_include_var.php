@@ -16,8 +16,8 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) {
-	die("Access Denied");
+    die("Access Denied");
 }
-$__BBCODE__[] = array("description" => $locale['bb_alt_description'], "value" => "alt", "bbcode_start" => "[alt]",
-					  "bbcode_end" => "[/alt]", "usage" => "[alt]".$locale['bb_alt_usage']."[/alt]");
+$__BBCODE__[] = ["description" => $locale['bb_alt_description'], "value" => "alt", "bbcode_start" => "[alt]",
+                 "bbcode_end"  => "[/alt]", "usage" => "[alt]".$locale['bb_alt_usage']."[/alt]"];
 ?>
