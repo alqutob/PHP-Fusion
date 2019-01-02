@@ -382,7 +382,8 @@ if ($_GET['pagenum'] == 0) {
 
     // Display admin panels & pages
     opentable($locale['200']." - v".$settings['version']);
-    echo "<table cellpadding='0' cellspacing='1' width='100%' class='tbl-border'>\n<tr>\n";
+    echo "<table cellpadding='0' cellspacing='1' width='100%' class='tbl-border'>\n";
+    /*echo "<tr>\n";
     for ($i = 1; $i < 6; $i++) {
         $_GET['pagenum'] = ($_GET['pagenum'] == 0) ? 0 : $_GET['pagenum'];
         $class = ($_GET['pagenum'] == $i ? "tbl1" : "tbl2");
@@ -394,7 +395,8 @@ if ($_GET['pagenum'] == 0) {
             echo $locale['ac0'.$i]."</span></td>\n";
         }
     }
-    echo "</tr>\n<tr>\n<td colspan='5' class='tbl'>\n";
+    echo "</tr>\n";*/
+    echo "<tr>\n<td colspan='5' class='tbl'>\n";
     $result = dbquery("SELECT * FROM ".DB_ADMIN." WHERE admin_page='".$_GET['pagenum']."' ORDER BY admin_title");
     $rows = dbrows($result);
     if ($rows != 0) {
