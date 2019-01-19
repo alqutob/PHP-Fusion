@@ -23,3 +23,4 @@ $locale['419'] = "Options";
 $locale['420'] = "Version";
 $locale['421'] = "Author";
 $locale['422'] = "Download more Addons";
+?>

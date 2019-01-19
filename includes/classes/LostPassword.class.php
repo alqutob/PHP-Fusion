@@ -2,7 +2,7 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: LostPassword.class.php
 | Author: gh0st2k
@@ -118,3 +118,4 @@ class LostPassword extends PasswordAuth {
 		$this->_html .= "<div style='text-align:center'><br />\n".$locale['402']."<br /><br />\n<a href='index.php'>".$locale['403']."</a><br /><br />\n</div>\n";
 	}
 }
+?>

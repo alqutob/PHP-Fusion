@@ -2,10 +2,10 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: index.php
-| Author: PHP-Fusion Development Team
+| Author: Nick Jones (Digitanium)
 +--------------------------------------------------------+
 | This program is released as free software under the
 | Affero GPL license. You can redistribute it and/or
@@ -22,7 +22,7 @@ if ($settings['site_seo'] && !isset($_GET['aid'])) {
     $router = PHPFusion\Rewrite\Router::getRouterInstance();
     $router->rewritePage();
     $filepath = $router->getFilePath();
-    if (empty($filepath) && filter_var(PERMALINK_CURRENT_PATH, FILTER_VALIDATE_URL)) {
+    if (empty($filepath) && filter_var(PERMALINK_CURRENT_PATH, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED)) {
         redirect(PERMALINK_CURRENT_PATH);
     } else {
         if (isset($_GET['lang']) && valid_language($_GET['lang'])) {

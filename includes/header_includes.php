@@ -2,7 +2,7 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: header_includes.php
 +--------------------------------------------------------+
@@ -16,3 +16,5 @@
 +--------------------------------------------------------*/
 
 //Add your custom include files for the header here
+
+?>

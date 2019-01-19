@@ -17,3 +17,4 @@
 +--------------------------------------------------------*/
 if (!defined("IN_FUSION")) { die("Access Denied"); }
 $text = preg_replace('#\[u\](.*?)\[/u\]#si', '<u>\1</u>', $text);
+?>

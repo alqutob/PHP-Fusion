@@ -2,7 +2,7 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: infusion_db.php
 | Author: MarcusG
@@ -15,10 +15,9 @@
 | copyright header is strictly prohibited without
 | written permission from the original author(s).
 +--------------------------------------------------------*/
-if (!defined("IN_FUSION")) {
-    die("Access Denied");
-}
+if (!defined("IN_FUSION")) { die("Access Denied"); }
 
 if (!defined("DB_SHOUTBOX")) {
-    define("DB_SHOUTBOX", DB_PREFIX."shoutbox");
+	define("DB_SHOUTBOX", DB_PREFIX."shoutbox");
 }
+?>

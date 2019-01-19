@@ -1,7 +1,7 @@
 <?php
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System Version 8
-| Copyright (C) PHP-Fusion Inc
+| Copyright (C) 2002 - 2013 Nick Jones
 | https://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Project File: User Search Results for Form Select User V8

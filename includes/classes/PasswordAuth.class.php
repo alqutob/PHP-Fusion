@@ -2,7 +2,7 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: PasswordAuth.class.php
 | Author: Hans Kristian Flaatten (Starefossen)
@@ -127,3 +127,4 @@ class PasswordAuth {
 		return sha1(PasswordAuth::getNewPassword($length));
 	}
 }
+?>

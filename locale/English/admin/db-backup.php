@@ -45,3 +45,4 @@ $locale['461'] = "Required Information";
 $locale['480'] = "Restore Backup";
 $locale['481'] = "Filename:";
 $locale['481b'] = "Please enter a Filename";
+?>

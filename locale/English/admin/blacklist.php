@@ -33,9 +33,10 @@ $locale['466'] = "N/A";
 $locale['467'] = "Admin";
 $locale['468'] = "Date";
 /*
-// IPv6 specific
+// IPv6 secific
 $locale['480'] = "IPv6 options";
 $locale['481'] = "The specified IPv6 address contains a shortcut (::) therefore cannot be determined unequivocally.";
 $locale['482'] = "Which version would you use?";
 $locale['483'] = "Save";
 */
+?>

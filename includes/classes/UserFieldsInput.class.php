@@ -1,8 +1,8 @@
 <?php
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
-| Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| Copyright (C) 2002 - 2011 Nick Jones
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: UserFieldsInput.class.php
 | Author: Hans Kristian Flaatten (Starefossen)
@@ -429,7 +429,7 @@ class UserFieldsInput {
 
 	private function _setUserAvatar() {
 		global $locale, $settings;
-
+		
 		if (isset($_POST['delAvatar'])) {
 			if ($this->userData['user_avatar'] != "" && file_exists(IMAGES."avatars/".$this->userData['user_avatar']) &&
 				is_file(IMAGES."avatars/".$this->userData['user_avatar']) ) {
@@ -647,3 +647,4 @@ class UserFieldsInput {
         	if ($sql != "") { $result = dbquery($sql); }
 	}
 }
+?>

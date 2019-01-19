@@ -37,3 +37,4 @@ Your account on ".$settings['sitename']." has been suspended by ".$userdata['use
 [REASON].\n
 If you want more information about this suspension, please, contact the site administrator at ".$settings['siteemail'].".\n
 ".$settings['siteusername'];
+?>

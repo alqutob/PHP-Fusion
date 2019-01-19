@@ -8,3 +8,4 @@ $locale['f405'] = "Announcement:";
 $locale['f406'] = "found in";
 $locale['f407'] = "post subject";
 $locale['f408'] = "post message";
+?>

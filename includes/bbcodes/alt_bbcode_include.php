@@ -1,8 +1,8 @@
 <?php
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
-| Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| Copyright (C) 2002 - 2011 Nick Jones
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: alt_bbcode_include.php
 | Author: Wooya
@@ -18,3 +18,4 @@
 if (!defined("IN_FUSION")) { die("Access Denied"); }
 
 $text = preg_replace('#\[alt\](.*?)\[/alt\]#si', '<span class=\'alt\'>\1</span>', $text);
+?>

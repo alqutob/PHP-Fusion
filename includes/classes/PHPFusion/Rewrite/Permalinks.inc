@@ -5,7 +5,7 @@
 | https://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: Permalinks.inc
-| Author: PHP-Fusion Development Team
+| Author: Frederick MC Chan (Chan)
 | Co-Author: Ankur Thakur
 | Co-Author: Takács Ákos (Rimelek)
 +--------------------------------------------------------+

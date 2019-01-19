@@ -18,3 +18,4 @@ $locale['html415'] = "Black";
 $locale['html416'] = "Gray";
 $locale['html417'] = "Silver";
 $locale['html418'] = "White";
+?>

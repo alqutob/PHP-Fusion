@@ -8,3 +8,4 @@ $locale['d405'] = "O/S:";
 $locale['d406'] = "Version:";
 $locale['d407'] = "Date Added:";
 $locale['d408'] = "Downloads:";
+?>

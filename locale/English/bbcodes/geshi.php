@@ -6,3 +6,4 @@ $locale['bb_geshi_parser1'] = "Parser note";
 $locale['bb_geshi_parser2'] = "Code too big for GeSHi! Using code tag instead";
 $locale['bb_geshi_info'] = "Parsed in <TIME> seconds, using GeSHi <VERSION>";
 $locale['bb_geshi_save'] = "Download source";
+?>

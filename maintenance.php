@@ -40,8 +40,8 @@ if (!iMEMBER) {
         default:
             $placeholder = $locale['global_101a'];
     }
-    $user_name = isset($_POST['user_name']) ? stripinput($_POST['user_name'], "", "user_name") : "";
-    $user_password = isset($_POST['user_pass']) ? stripinput($_POST['user_pass'], "", "user_pass") : "";
+    $user_name = isset($_POST['user_name']) ? form_sanitizer($_POST['user_name'], "", "user_name") : "";
+    $user_password = isset($_POST['user_pass']) ? form_sanitizer($_POST['user_pass'], "", "user_pass") : "";
     $path = fusion_get_settings('opening_page');
     if (!defined('IN_PERMALINK')) {
         $path = BASEDIR.(!stristr(fusion_get_settings('opening_page'), '.php') ? fusion_get_settings('opening_page').'/index.php' : fusion_get_settings('opening_page'));
@@ -65,6 +65,7 @@ echo "<meta name='keywords' content='".fusion_get_settings('keywords')."' />\n";
 echo "<meta name='image' content='".fusion_get_settings('siteurl').fusion_get_settings('sitebanner')."' />\n";
 
 
+
 // Load bootstrap stylesheets
 if ($settings['bootstrap'] || defined('BOOTSTRAP')) {
     echo "<meta http-equiv='X-UA-Compatible' content='IE=edge'/>\n";
@@ -79,7 +80,7 @@ if ($settings['bootstrap'] || defined('BOOTSTRAP')) {
 
 // Global CSS, Resets etc.
 if (!defined('NO_GLOBAL_CSS')) {
-    echo "<link rel='stylesheet' href='".THEMES."templates/global.css' type='text/css' media='screen' />\n";
+	echo "<link rel='stylesheet' href='".THEMES."templates/global.css' type='text/css' media='screen' />\n";
 }
 
 if (!defined('NO_DEFAULT_CSS')) {
@@ -87,7 +88,7 @@ if (!defined('NO_DEFAULT_CSS')) {
 }
 
 if ($settings['entypo'] || defined('ENTYPO')) {
-    echo "<link rel='stylesheet' href='".INCLUDES."fonts/entypo/entypo.css' type='text/css' />\n";
+	echo "<link rel='stylesheet' href='".INCLUDES."fonts/entypo/entypo.css' type='text/css' />\n";
 }
 
 // Font Awesome 4
@@ -147,8 +148,14 @@ echo "</body>\n</html>\n";
 // Output lines added with add_to_footer()
 echo $fusion_page_footer_tags;
 
+// Output lines added with add_to_jquery()
+$fusion_jquery_tags = "$('[data-submenu]').submenupicker();";
+// Fix select2 on modal - http://stackoverflow.com/questions/13649459/twitter-bootstrap-multiple-modal-error/15856139#15856139
+$fusion_jquery_tags .= "$.fn.modal.Constructor.prototype.enforceFocus = function () {};";
+
+// Output lines added with add_to_jquery()
 if (!empty($fusion_jquery_tags)) {
-    echo "<script type='text/javascript'>$(function(){".$fusion_jquery_tags."});</script>\n";
+    push_jquery();
 }
 
 $output = ob_get_contents();

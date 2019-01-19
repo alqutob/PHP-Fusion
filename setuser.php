@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
-| Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| Copyright (C) 2002 - 2011 Nick Jones
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: setuser.php
-| Author: PHP-Fusion Development Team
+| Author: Nick Jones (Digitanium)
 +--------------------------------------------------------+
 | This program is released as free software under the
 | Affero GPL license. You can redistribute it and/or

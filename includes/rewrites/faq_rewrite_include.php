@@ -20,25 +20,25 @@ if (!defined("IN_FUSION")) {
     die("Access Denied");
 }
 
-$regex = [
+$regex = array(
     "%faq_cat_id%"   => "([0-9]+)",
     "%faq_cat_name%" => "([0-9a-zA-Z._\W]+)",
-    "%faq_id%"       => "([0-9]+)",
+	"%faq_id%"   	 => "([0-9]+)",
     "%type%"         => "(FQ)",
     "%stype%"        => "(q)",
-];
+);
 
-$pattern = [
+$pattern = array(
     "print/%type%/%cat_id%"                                             => "print.php?type=%type%&amp;item_id=%cat_id%",
     "submit/%stype%/frequently-asked-questions"                         => "submit.php?stype=%stype%",
     "submit/%stype%/frequently-asked-questions/submitted-and-thank-you" => "submit.php?stype=%stype%&amp;submitted=FQ",
     "frequently-asked-questions"                                        => "faq.php",
     "frequently-asked-questions/category/%faq_cat_id%"                  => "faq.php?cat_id=%faq_cat_id%",
-];
+);
 
-$pattern_tables["%cat_id%"] = [
+$pattern_tables["%cat_id%"] = array(
     "table"       => DB_FAQS,
     "primary_key" => "faq_id",
-    "id"          => ["%faq_id%" => "cat_id"],
-    "columns"     => []
-];
+    "id"          => array("%faq_id%" => "cat_id"),
+    "columns"     => array()
+);

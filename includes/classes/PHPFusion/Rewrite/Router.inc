@@ -5,7 +5,7 @@
 | https://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: Router.inc
-| Author: PHP-Fusion Development Team
+| Author: Frederick MC Chan (Chan)
 | Co-Author: Ankur Thakur
 | Co-Author: Takács Ákos (Rimelek)
 +--------------------------------------------------------+
@@ -101,7 +101,7 @@ class Router extends RewriteDriver {
      */
     public function rewritePage() {
 	    global $settings;
-
+		
         // Import the required Handlers
         $this->loadSQLDrivers();
         // Include the Rewrites

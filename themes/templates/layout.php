@@ -45,15 +45,15 @@ if ($settings['bootstrap'] || defined('BOOTSTRAP')) {
 
 // Global CSS, Resets etc.
 if (!defined('NO_GLOBAL_CSS')) {
-    echo "<link rel='stylesheet' href='".THEMES."templates/global.css?v=".filemtime(THEMES.'templates/global.css')."' type='text/css' media='screen' />\n";
+	echo "<link rel='stylesheet' href='".THEMES."templates/global.css' type='text/css' media='screen' />\n";
 }
 
 if (!defined('NO_DEFAULT_CSS')) {
-    echo "<link href='".THEMES."templates/default.css?v=".filemtime(THEMES.'templates/default.css')."' rel='stylesheet' type='text/css' media='screen'/>\n";
+    echo "<link href='".THEMES."templates/default.css' rel='stylesheet' type='text/css' media='screen'/>\n";
 }
 
 if ($settings['entypo'] || defined('ENTYPO')) {
-    echo "<link rel='stylesheet' href='".INCLUDES."fonts/entypo/entypo.css' type='text/css' />\n";
+	echo "<link rel='stylesheet' href='".INCLUDES."fonts/entypo/entypo.css' type='text/css' />\n";
 }
 
 // Font Awesome 4
@@ -71,7 +71,7 @@ if (!defined('FONTAWESOME-V4')) {
 }
 
 $theme_css = file_exists(THEME.'styles.min.css') ? THEME.'styles.min.css' : THEME.'styles.css';
-echo "<link href='".$theme_css."?v=".filemtime($theme_css)."' rel='stylesheet' type='text/css' media='screen'/>\n";
+echo "<link href='".$theme_css."' rel='stylesheet' type='text/css' media='screen'/>\n";
 
 echo render_favicons(defined('THEME_ICON') ? THEME_ICON : IMAGES.'favicons/');
 
@@ -112,12 +112,13 @@ echo "<script type='text/javascript' src='".INCLUDES."jquery/holder/holder.min.j
 echo $fusion_page_footer_tags;
 
 // Output lines added with add_to_jquery()
-//$fusion_jquery_tags = "$('[data-submenu]').submenupicker();";
+$fusion_jquery_tags = "$('[data-submenu]').submenupicker();";
 // Fix select2 on modal - http://stackoverflow.com/questions/13649459/twitter-bootstrap-multiple-modal-error/15856139#15856139
-//$fusion_jquery_tags .= "$.fn.modal.Constructor.prototype.enforceFocus = function () {};";
+$fusion_jquery_tags .= "$.fn.modal.Constructor.prototype.enforceFocus = function () {};";
 
+// Output lines added with add_to_jquery()
 if (!empty($fusion_jquery_tags)) {
-    echo "<script type='text/javascript'>$(function(){".$fusion_jquery_tags."});</script>\n";
+    push_jquery();
 }
 
 // Uncomment to guide your theme development

@@ -16,7 +16,7 @@ $locale['on'] = "On";
 
 // Navigation
 $locale['next'] = "Next";
-$locale['previous'] = "Previous";
+$locale['pevious'] = "Previous";
 $locale['back'] = "Back";
 $locale['forward'] = "Forward";
 

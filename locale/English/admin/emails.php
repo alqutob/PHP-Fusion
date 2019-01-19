@@ -30,7 +30,7 @@ $locale['434'] = "Subject";
 $locale['435'] = "Message";
 $locale['436'] = "Background"; // Button
 $locale['437'] = "Test this template";
-$locale['438'] = "Template will be saved and a test mail will be sent to your address: %s. Continue?";
+$locale['438'] = "Template will be saved and a test mail will be sent to your adress: %s. Continue?";
 $locale['439'] = "Save";
 $locale['440'] = "Reset";
 // Help
@@ -50,3 +50,4 @@ $locale['470'] = "Subject cannot be empty!";
 $locale['471'] = "Message cannot be empty!";
 $locale['472'] = "Sender name cannot be empty!";
 $locale['473'] = "Sender email cannot be empty!";
+?>

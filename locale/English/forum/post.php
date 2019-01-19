@@ -91,3 +91,4 @@ If you no longer wish to watch this thread you can click the 'Stop tracking this
 
 Regards,
 ".$settings['siteusername'].".";
+?>

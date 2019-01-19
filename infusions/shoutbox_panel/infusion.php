@@ -2,7 +2,7 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: infusion.php
 | Author: Marcus Gottschalk (MarcusG)
@@ -15,19 +15,17 @@
 | copyright header is strictly prohibited without
 | written permission from the original author(s).
 +--------------------------------------------------------*/
-if (!defined("IN_FUSION")) {
-    die("Access Denied");
-}
+if (!defined("IN_FUSION")) { die("Access Denied"); }
 
 include INFUSIONS."shoutbox_panel/infusion_db.php";
 
 // Check if locale file is available matching the current site locale setting.
 if (file_exists(INFUSIONS."shoutbox_panel/locale/".$settings['locale'].".php")) {
-    // Load the locale file matching the current site locale setting.
-    include INFUSIONS."shoutbox_panel/locale/".$settings['locale'].".php";
+	// Load the locale file matching the current site locale setting.
+	include INFUSIONS."shoutbox_panel/locale/".$settings['locale'].".php";
 } else {
-    // Load the infusion's default locale file.
-    include INFUSIONS."shoutbox_panel/locale/English.php";
+	// Load the infusion's default locale file.
+	include INFUSIONS."shoutbox_panel/locale/English.php";
 }
 
 // Infusion general information
@@ -52,7 +50,7 @@ shout_hidden TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 shout_language VARCHAR(50) NOT NULL DEFAULT '',
 PRIMARY KEY (shout_id),
 KEY shout_datestamp (shout_datestamp)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+) ENGINE=MyISAM;";
 
 $inf_insertdbrow[1] = DB_PANELS." (panel_name, panel_filename, panel_content, panel_side, panel_order, panel_type, panel_access, panel_display, panel_status) VALUES('".$locale['SB_title']."', 'shoutbox_panel', '', '4', '3', 'file', '0', '0', '1')";
 $inf_insertdbrow[2] = DB_SETTINGS_INF." (settings_name, settings_value, settings_inf) VALUES('visible_shouts', '5', '".$inf_folder."')";
@@ -63,14 +61,15 @@ $inf_droptable[1] = DB_SHOUTBOX;
 $inf_deldbrow[1] = DB_PANELS." WHERE panel_filename='".$inf_folder."'";
 $inf_deldbrow[2] = DB_SETTINGS_INF." WHERE settings_inf='".$inf_folder."'";
 
-$inf_adminpanel[1] = [
-    "title"  => $locale['SB_admin1'],
-    "image"  => "../../infusions/shoutbox_panel/shouts.svg",
-    "panel"  => "shoutbox_admin.php",
-    "rights" => "S"
-];
+$inf_adminpanel[1] = array(
+	"title" => $locale['SB_admin1'],
+	"image" => "../../infusions/shoutbox_panel/shouts.svg",
+	"panel" => "shoutbox_admin.php",
+	"rights" => "S"
+);
 
-$inf_mlt[1] = [
-    "title"  => $locale['SB_title'],
-    "rights" => "SB"
-];
+$inf_mlt[1] = array(
+	"title" => $locale['SB_title'],
+	"rights" => "SB"
+);
+?>

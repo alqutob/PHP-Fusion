@@ -143,3 +143,5 @@ class ReCaptcha {
         return $req;
     }
 }
+
+?>

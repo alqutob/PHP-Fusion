@@ -2,10 +2,10 @@
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
 | Copyright (C) PHP-Fusion Inc
-| https://www.php-fusion.co.uk/
+| http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: welcome_message_panel.php
-| Author: PHP-Fusion Development Team
+| Author: Nick Jones (Digitanium)
 +--------------------------------------------------------+
 | This program is released as free software under the
 | Affero GPL license. You can redistribute it and/or
@@ -20,3 +20,4 @@ if (!defined("IN_FUSION")) { die("Access Denied"); }
 opentable($locale['global_035']);
 echo stripslashes($settings['siteintro'])."\n";
 closetable();
+?>

@@ -6,3 +6,4 @@ $locale['p403'] = "[NEW]";
 $locale['p404'] = "Album:";
 $locale['p405'] = "Addition date:";
 $locale['p406'] = "Views:";
+?>

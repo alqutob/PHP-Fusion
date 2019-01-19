@@ -31,14 +31,14 @@ You are about to delete user <strong>%s</strong> !<br />
 The following content <u>posted by this user</u> on this site will be deleted if you proceed:<br />
 - Articles<br />
 - News<br />
-- Forum threads. Note that posts made by other users in these threads will also be deleted, along with the poll votes and attachments existent in this threads.<br />
+- Forum threads. Note that posts made by other users in these threads will also be deleted, along with the poll votes and attachemets existent in this threads.<br />
 - Forum posts<br />
-- Forum attachments<br />
+- Forum attachements<br />
 - Comments<br />
 - Private messages sent or received by this user<br />
 - Poll votes<br />
 - Ratings given<br />
-Unless this is a spammer for eg. we recommend you to Ban, Suspend, Cancel or Anonymize this user.<br />
+Unless this is a spammer for eg. we recommend you to Ban, Suspend, Cancel or Anomymize this user.<br />
 <br />
 Are you sure you want to delete this user?<br />";
 $locale['426'] = "Yes";
@@ -70,7 +70,7 @@ $locale['473'] = "User Groups";
 $locale['480'] = "Add Member";
 $locale['481'] = "The member account has been created.";
 $locale['482'] = "The member account could not be created.";
-// Suspension Log
+// Suspension Log 
 $locale['510s'] = "Suspension Log for ";
 $locale['511s'] = "There are no recorded suspensions for this member in the suspension log.";
 $locale['512s'] = "Previous suspensions of ";
@@ -133,10 +133,10 @@ $locale['602'] = "Unban";
 $locale['603'] = "unbanning";
 $locale['604'] = "Reason:";
 // Deactivation System
-$locale['610'] = "<strong>%d user(s)</strong> have not logged in for <strong>%d day(s)</strong> and have been marked as inactive.
+$locale['610'] = "<strong>%d user(s)</strong> have not logged in for <strong>%d day(s)</strong> and have been marked as inactive. 
 By deactivating these users they will have <strong>%d day(s)</strong> before they are %s.";
 $locale['611'] = "Please note that some users may have submitted content to your site such as forum posts, comments, photos etc.
-these will be deleted when deactivated users are being deleted.";
+these will be deleted when deactivated users are beeing deleted.";
 $locale['612'] = "user";
 $locale['613'] = "users";
 $locale['614'] = "Deactivate";
@@ -147,3 +147,4 @@ $locale['618'] = "It is strongly recommended to change deactivation action to an
 $locale['619'] = "You can do so here.";
 $locale['620'] = "anonymize";
 $locale['621'] = "Automatic deactivation of inactive users.";
+?>

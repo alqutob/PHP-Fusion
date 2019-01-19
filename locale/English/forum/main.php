@@ -25,7 +25,7 @@ $locale['460'] = "Check All";
 $locale['461'] = "Uncheck All";
 $locale['462'] = "Delete threads";
 $locale['463'] = "Delete selected threads?";
-// Forum Guide/Privileges
+// Forum Guide/Privelages
 $locale['470'] = "Open Thread with new posts since last visit";
 $locale['471'] = "20 posts or more";
 $locale['472'] = "Open Thread with no new posts since last visit.";
@@ -92,7 +92,7 @@ $locale['532a'] = "All";
 $locale['532b'] = "Discussions";
 $locale['532c'] = "Attachments";
 $locale['532d'] = "Polls";
-$locale['533'] = "Sort by";
+$locale['533'] = "Sortby";
 $locale['533a'] = "Date - last update";
 $locale['533b'] = "Date - started post";
 $locale['533c'] = "Replies";
@@ -145,3 +145,4 @@ $locale['error-MP000'] = "Move posts - error";
 $locale['error-MP001'] = "New thread doesn't exist.";
 $locale['error-MP002'] = "Posts which you're marked to move don't exists or someone else already moved them.";
 $locale['error-MP003'] = "No posts to move.";
+?>

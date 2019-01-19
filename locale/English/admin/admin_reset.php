@@ -40,7 +40,8 @@ $locale['416'] = "Log ID";
 $locale['417'] = "Reset time";
 $locale['418'] = "Responsible";
 $locale['419'] = "Reset";
-$locale['420'] = "Successful";
+$locale['420'] = "Successfull";
 $locale['421'] = "Reason";
 $locale['422'] = "of";
 $locale['423'] = "No reason given.";
+?>

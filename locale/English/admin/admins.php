@@ -44,3 +44,4 @@ $locale['470'] = "Delete Admin";
 $locale['471'] = "In order to remove this Administrator, please enter your admin password:";
 $locale['472'] = "Confirm";
 $locale['473'] = "Cancel";
+?>
